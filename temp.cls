@@ -1,5 +1,12 @@
-\ProvidesClass{temp}[2026/04/11 CV]
+\ProvidesClass{temp}[2026/08/31 CV]
 \NeedsTeXFormat{LaTeX2e}
+% Language
+\newcommand{\cv@lang}{en}
+\newcommand{\cv@babel}{english}
+
+\DeclareOption{en}{\renewcommand{\cv@lang}{en}}
+\DeclareOption{it}{\renewcommand{\cv@lang}{it}}
+
 \DeclareOption{print}{\def\@cv@print{}}
 \DeclareOption*{%
   \PassOptionsToClass{\CurrentOption}{scrartcl}
@@ -7,7 +14,7 @@
 \ProcessOptions\relax
 \LoadClass{scrartcl}
 
-\usepackage[english]{babel}
+\usepackage[\cv@babel]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage[default,scale=0.95]{opensans}
 \usepackage[T1]{fontenc}
