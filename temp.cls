@@ -1,11 +1,14 @@
 \ProvidesClass{temp}[2026/08/31 CV]
 \NeedsTeXFormat{LaTeX2e}
 % Language
-\newcommand{\cv@lang}{en}
-\newcommand{\cv@babel}{english}
+\newcommand{\cvlang}{en}
 
-\DeclareOption{en}{\renewcommand{\cv@lang}{en}}
-\DeclareOption{it}{\renewcommand{\cv@lang}{it}}
+\DeclareOption{en}{\renewcommand{\cvlang}{en}}
+\DeclareOption{it}{\renewcommand{\cvlang}{it}}
+
+%If it is selected set cvbabel to italian, otherwise set it to english
+%\DeclareOption{it}{\renewcommand{\cvbabel}{italian}}
+%\DeclareOption{en}{\renewcommand{\cvbabel}{english}}
 
 \DeclareOption{print}{\def\@cv@print{}}
 \DeclareOption*{%
@@ -14,7 +17,7 @@
 \ProcessOptions\relax
 \LoadClass{scrartcl}
 
-\usepackage[\cv@babel]{babel}
+\usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage[default,scale=0.95]{opensans}
 \usepackage[T1]{fontenc}
