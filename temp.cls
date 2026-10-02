@@ -1,14 +1,14 @@
 \ProvidesClass{temp}[2026/08/31 CV]
 \NeedsTeXFormat{LaTeX2e}
 % Language
-\newcommand{\cvlang}{en}
+\providecommand{\cvlang}{en}
 
-\DeclareOption{en}{\renewcommand{\cvlang}{en}}
-\DeclareOption{it}{\renewcommand{\cvlang}{it}}
-
-%If it is selected set cvbabel to italian, otherwise set it to english
-%\DeclareOption{it}{\renewcommand{\cvbabel}{italian}}
-%\DeclareOption{en}{\renewcommand{\cvbabel}{english}}
+\DeclareOption{en}{%
+  \renewcommand{\cvlang}{en}%
+}
+\DeclareOption{it}{%
+  \renewcommand{\cvlang}{it}%
+}
 
 \DeclareOption{print}{\def\@cv@print{}}
 \DeclareOption*{%
