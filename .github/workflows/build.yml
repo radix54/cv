@@ -19,7 +19,9 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install --no-install-recommends -y \
+            fonts-urw-base35 \
             texlive-fonts-extra \
+            texlive-fonts-recommended \
             texlive-latex-extra
 
       - name: Build English CV
