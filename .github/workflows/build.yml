@@ -1,0 +1,41 @@
+name: CV Compiling
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y \
+            texlive-fonts-extra \
+            texlive-latex-extra
+
+      - name: Build English CV
+        run: |
+          make en
+          mv master.pdf cv_en.pdf
+
+      - name: Build Italian CV
+        run: |
+          make it
+          mv master.pdf cv_it.pdf
+
+      - name: Upload CVs to release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            cv_en.pdf
+            cv_it.pdf
