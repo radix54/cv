@@ -17,4 +17,4 @@ make CV_LANG=it
 The `make en` and `make it` targets are equivalent convenience aliases.
 
 # Authors
-- @ozneroL541 Lorenzo Radice
+- @radix54 Lorenzo Radice
